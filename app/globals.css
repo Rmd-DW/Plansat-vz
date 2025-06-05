@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Cambiamos el color primario al púrpura de PLANSAT */
+    --primary: 267 100% 40%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 267 100% 40%;
+    --radius: 0.5rem;
+
+    /* Vegetation type colors */
+    --bosque-nativo: 33 100% 50%; /* #FF8C00 */
+    --bosque-mixto: 210 80% 55%; /* #1E90FF */
+    --matorral: 120 61% 50%; /* #32CD32 */
+    --matorral-arborescente: 348 86% 56%; /* #DC143C */
+    --matorral-pradera: 260 60% 65%; /* #9370DB */
+    --praderas: 25 47% 31%; /* #8B4513 */
+
+    /* Color PLANSAT */
+    --plansat: 267 100% 40%; /* #5900ff aproximadamente */
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 267 100% 60%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 267 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin-top: 0;
+  }
+}
+
+/* Leaflet map container styles */
+.map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* Leaflet map container styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+/* Fix for Leaflet popup styles */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius);
+  font-family: var(--font-sora);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-popup-content h3 {
+  font-weight: 600;
+  font-family: var(--font-sora);
+}
+
+/* Custom marker styles */
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Grayscale map styles */
+.grayscale-map {
+  filter: grayscale(100%) contrast(1.1) brightness(1.1);
+}
+
+/* Custom map background colors */
+.leaflet-container {
+  background-color: #faf7ff !important;
+}
+
+.leaflet-tile-pane {
+  filter: hue-rotate(10deg) saturate(0.8);
+}
+
+/* Override default map colors */
+.custom-map-bg {
+  background: linear-gradient(135deg, #e5e4f4 0%, #faf7ff 100%);
+}
+
+/* Map filter overlay */
+.map-filter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #520dc2;
+  mix-blend-mode: soft-light;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 400;
+  border-radius: 0.5rem;
+}
+
+/* Apply filter to leaflet map container */
+.leaflet-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #520dc2;
+  mix-blend-mode: soft-light;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 400;
+  border-radius: 0.5rem;
+}
