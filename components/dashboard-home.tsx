@@ -73,9 +73,7 @@ export default function DashboardHome() {
 
         {/* Contenedor con título */}
         <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm">
-          <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-[#6B46C1]">Mapa de frecuencia de incendios por comuna</h1>
-          </div>
+          <h1 className="text-2xl font-bold text-[#6B46C1]">Mapa de frecuencia de incendios por comuna</h1>
         </div>
 
         {/* Filter Cards */}
