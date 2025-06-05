@@ -71,32 +71,10 @@ export default function DashboardHome() {
           </div>
         </div>
 
-        {/* Contenedor con título y botones de vista */}
+        {/* Contenedor con título */}
         <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="flex items-center">
             <h1 className="text-2xl font-bold text-[#6B46C1]">Mapa de frecuencia de incendios por comuna</h1>
-            <div className="flex gap-2">
-              <button
-                onClick={() => setActiveView("frecuencia")}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                  activeView === "frecuencia"
-                    ? "bg-[#6B46C1] text-white shadow-lg"
-                    : "bg-white text-[#6B46C1] border border-gray-200 hover:border-[#6B46C1]"
-                }`}
-              >
-                Vista Frecuencia
-              </button>
-              <button
-                onClick={() => setActiveView("intensidad")}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
-                  activeView === "intensidad"
-                    ? "bg-[#6B46C1] text-white shadow-lg"
-                    : "bg-white text-[#6B46C1] border border-gray-200 hover:border-[#6B46C1]"
-                }`}
-              >
-                Vista Intensidad
-              </button>
-            </div>
           </div>
         </div>
 
