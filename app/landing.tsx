@@ -1,184 +1,151 @@
 "use client"
-
-import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  ArrowRight,
-  BarChart2,
-  Map,
-  Shield,
-  ChevronRight,
-  Flame,
-  LineChart,
-  Mail,
-  Phone,
-  MapPin,
-  FileText,
-  Code,
-  HelpCircle,
-} from "lucide-react"
+import { BarChart2, Map, ChevronRight, FileText, Clock, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function LandingPage() {
-  const [activeTab, setActiveTab] = useState("dashboard")
-
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#E5E3EE]">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+      <header className="w-full bg-white rounded-b-2xl shadow-sm">
+        <div className="container mx-auto flex h-16 items-center justify-between px-6">
           <div className="flex items-center gap-2">
-            <Link href="/dashboard-home">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-FE1MGS6isFplG4BZ1WYezlE61Ypq3j.png"
-                alt="PLANSAT Logo"
-                width={120}
-                height={32}
-                className="object-contain cursor-pointer"
-              />
-            </Link>
+            <div className="w-8 h-8 bg-[#6B46C1] rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-sm">P</span>
+            </div>
+            <span className="text-[#6B46C1] text-xl font-bold">PLANSAT</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/loading">
-              <Button>Acceder</Button>
+              <Button className="bg-[#6B46C1] hover:bg-[#553C9A] text-white px-6 py-2 rounded-xl">Acceder</Button>
             </Link>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative isolate">
-        {/* Imagen de fondo clara y visible */}
-        <div
-          className="absolute inset-0 -z-10 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: "url('/images/textura2.png')" }}
-        />
+      <section className="container mx-auto px-6 py-16 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight text-black mb-6">
+          Monitoreo y Análisis de Impacto
+          <br />
+          de Incendios Forestales
+        </h1>
+        <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+          PLANSAT proporciona herramientas avanzadas para el análisis de vegetación afectada por incendios forestales en
+          la región de Ñuble Chile
+        </p>
 
-        {/* Capa de color violeta con blending para tono PLANSAT */}
-        <div className="absolute inset-0 -z-10 bg-[#3B0DC2]/40 mix-blend-multiply" />
-
-        {/* Capa de brillo y contraste */}
-        <div className="absolute inset-0 -z-10 bg-white/70 mix-blend-overlay" />
-
-        {/* Capa de gradiente superior para legibilidad */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/60 via-white/70 to-white/90" />
-
-        {/* Contenido centrado */}
-        <div className="container relative z-10 py-20 flex flex-col items-center text-center space-y-6">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight text-black">
-            Monitoreo y Análisis de Impacto <br /> de incendios Forestales
-          </h1>
-          <p className="text-sm md:text-base text-black/80 max-w-xl">
-            PLANSAT proporciona herramientas avanzadas para el análisis de vegetación afectada por incendios forestales
-            en la región de Ñuble, Chile
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/loading">
-              <Button size="lg" className="w-full sm:w-auto">
-                Comenzar ahora →
-              </Button>
-            </Link>
-            <Link href="#features">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Ver características
-              </Button>
-            </Link>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/loading">
+            <Button className="bg-[#6B46C1] hover:bg-[#553C9A] text-white px-8 py-3 rounded-xl text-lg">
+              Comenzar ahora →
+            </Button>
+          </Link>
+          <Link href="#features">
+            <Button
+              variant="outline"
+              className="border-[#6B46C1] text-[#6B46C1] hover:bg-[#6B46C1]/5 px-8 py-3 rounded-xl text-lg"
+            >
+              Ver características
+            </Button>
+          </Link>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="container py-12 md:py-24">
+      <section id="features" className="container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold tracking-tighter mb-4">Características Principales</h2>
-          <p className="text-muted-foreground text-lg max-w-[700px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-black">
+            Características principales
+          </h2>
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             PLANSAT ofrece herramientas avanzadas para el análisis y monitoreo de incendios forestales.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
+          <Card className="bg-white border-0 shadow-sm rounded-2xl hover:shadow-md transition-shadow">
+            <CardContent className="pt-8 pb-6 px-6">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <Map className="h-6 w-6 text-primary" />
+                <div className="p-4 bg-[#6B46C1]/10 rounded-2xl">
+                  <Map className="h-8 w-8 text-[#6B46C1]" />
                 </div>
-                <h3 className="text-xl font-bold">Visualización Geoespacial</h3>
-                <p className="text-muted-foreground">
-                  Mapas interactivos que muestran la distribución de incendios y áreas afectadas en la Región de Ñuble.
+                <h3 className="text-xl font-bold text-black">Visualización geoespacial</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Mapa interactivo que muestra la distribución de incendios y áreas afectadas en la Región del Ñuble.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
+          <Card className="bg-white border-0 shadow-sm rounded-2xl hover:shadow-md transition-shadow">
+            <CardContent className="pt-8 pb-6 px-6">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <BarChart2 className="h-6 w-6 text-primary" />
+                <div className="p-4 bg-[#6B46C1]/10 rounded-2xl">
+                  <BarChart2 className="h-8 w-8 text-[#6B46C1]" />
                 </div>
-                <h3 className="text-xl font-bold">Análisis Estadístico</h3>
-                <p className="text-muted-foreground">
-                  Gráficos y estadísticas detalladas sobre la evolución de incendios y tipos de vegetación afectada.
+                <h3 className="text-xl font-bold text-black">Análisis estadísticos</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Estudios de la distribución de incendios y áreas afectadas en la región del Ñuble.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
+          <Card className="bg-white border-0 shadow-sm rounded-2xl hover:shadow-md transition-shadow">
+            <CardContent className="pt-8 pb-6 px-6">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <FileText className="h-6 w-6 text-primary" />
+                <div className="p-4 bg-[#6B46C1]/10 rounded-2xl">
+                  <FileText className="h-8 w-8 text-[#6B46C1]" />
                 </div>
-                <h3 className="text-xl font-bold">Generación de Reportes</h3>
-                <p className="text-muted-foreground">
-                  Creación de informes personalizados en formato PDF con datos detallados para toma de decisiones.
+                <h3 className="text-xl font-bold text-black">Generación de reportes</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Datos para la generación de reportes para la toma de decisiones.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
+          <Card className="bg-white border-0 shadow-sm rounded-2xl hover:shadow-md transition-shadow">
+            <CardContent className="pt-8 pb-6 px-6">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <Flame className="h-6 w-6 text-primary" />
+                <div className="p-4 bg-[#6B46C1]/10 rounded-2xl">
+                  <BarChart2 className="h-8 w-8 text-[#6B46C1]" />
                 </div>
-                <h3 className="text-xl font-bold">Monitoreo de Impacto</h3>
-                <p className="text-muted-foreground">
-                  Seguimiento del impacto de incendios en diferentes tipos de vegetación y ecosistemas.
+                <h3 className="text-xl font-bold text-black">Monitoreo de frecuencia</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Seguimiento de frecuencia de incendios por comuna y período.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
+          <Card className="bg-white border-0 shadow-sm rounded-2xl hover:shadow-md transition-shadow">
+            <CardContent className="pt-8 pb-6 px-6">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <LineChart className="h-6 w-6 text-primary" />
+                <div className="p-4 bg-[#6B46C1]/10 rounded-2xl">
+                  <TrendingUp className="h-8 w-8 text-[#6B46C1]" />
                 </div>
-                <h3 className="text-xl font-bold">Análisis Temporal</h3>
-                <p className="text-muted-foreground">
-                  Comparación de datos históricos para identificar patrones y tendencias en incendios forestales.
+                <h3 className="text-xl font-bold text-black">Monitoreo de intensidad</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Seguimiento de intensidad de los incendios por comuna y período.
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
+          <Card className="bg-white border-0 shadow-sm rounded-2xl hover:shadow-md transition-shadow">
+            <CardContent className="pt-8 pb-6 px-6">
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <Shield className="h-6 w-6 text-primary" />
+                <div className="p-4 bg-[#6B46C1]/10 rounded-2xl">
+                  <Clock className="h-8 w-8 text-[#6B46C1]" />
                 </div>
-                <h3 className="text-xl font-bold">Soporte Técnico</h3>
-                <p className="text-muted-foreground">
-                  Asistencia especializada para usuarios y capacitación en el uso de la plataforma.
+                <h3 className="text-xl font-bold text-black">Análisis temporal</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Comparación de datos históricos para la identificación de patrones y tendencias de incendios
+                  forestales.
                 </p>
               </div>
             </CardContent>
@@ -186,129 +153,99 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Modules Section */}
-      <section id="modules" className="py-12 md:py-24 bg-muted/50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tighter mb-4">Mapa Interactivo región del Ñuble</h2>
-            <p className="text-muted-foreground text-lg max-w-[700px] mx-auto">
-              Visualice datos geoespaciales de incendios forestales en la región del Ñuble contamos con filtros
-              avanzados, mapa interactivo, linea de tiempo que muestra la distribución de las áreas afectadas.
-            </p>
-            <Link href="/loading">
-              <Button size="lg" className="w-full sm:w-auto mt-6">
-                Acceder al Dashboard
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+      {/* Interactive Map Section */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-black">Mapa Interactivo</h2>
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto mb-8">
+            Visualice datos geoespaciales de incendios forestales en la región del Ñuble contamos con filtros avanzados,
+            mapa interactivo, línea de tiempo que muestra la distribución de las áreas afectadas.
+          </p>
+          <Link href="/loading">
+            <Button className="bg-[#6B46C1] hover:bg-[#553C9A] text-white px-8 py-3 rounded-xl text-lg">Acceder</Button>
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Features List */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <ChevronRight className="h-5 w-5 text-[#6B46C1] mt-0.5 flex-shrink-0" />
+                <span className="text-[#6B46C1] font-medium">Mapa interactivo - Región del Ñuble</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <ChevronRight className="h-5 w-5 text-[#6B46C1] mt-0.5 flex-shrink-0" />
+                <span className="text-[#6B46C1] font-medium">Panel de filtros</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <ChevronRight className="h-5 w-5 text-[#6B46C1] mt-0.5 flex-shrink-0" />
+                <span className="text-[#6B46C1] font-medium">Estudio de datos línea de tiempo</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <ChevronRight className="h-5 w-5 text-[#6B46C1] mt-0.5 flex-shrink-0" />
+                <span className="text-[#6B46C1] font-medium">Nivel de impacto en la vegetación</span>
+              </li>
+            </ul>
           </div>
 
-          <div className="mt-8 bg-card rounded-lg border overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-              <div className="p-6 md:p-8 flex flex-col justify-center">
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-center gap-2">
-                    <ChevronRight className="h-4 w-4 text-[#5E17EB]" />
-                    <span className="text-[#5E17EB] font-medium">
-                      Visualizador interactivo de incendios en la Región del Ñuble
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ChevronRight className="h-4 w-4 text-[#5E17EB]" />
-                    <span className="text-[#5E17EB] font-medium">Filtros por año, comuna y tipo de vegetación</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ChevronRight className="h-4 w-4 text-[#5E17EB]" />
-                    <span className="text-[#5E17EB] font-medium">
-                      Datos de evolución y recuperación vegetal en el tiempo
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-muted relative min-h-[300px]">
-                <Image
-                  src="/images/imagen_hero.png"
-                  alt="Mockup visual conceptual del dashboard PLANSAT"
-                  fill
-                  className="object-cover w-full h-full"
-                  priority
-                />
-              </div>
+          {/* Satellite Image */}
+          <div className="bg-white rounded-2xl p-4 shadow-sm">
+            <div className="relative h-64 md:h-80 rounded-xl overflow-hidden">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PLANSAT__FIRE_DASHBOARD_DS.png-DuZnDM7KrFmPLgwUynqowwZVWCCY4P.jpeg"
+                alt="Imagen satelital de la región del Ñuble mostrando análisis de incendios forestales"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-[#400A97] to-[#7F42E2] text-white py-12 md:py-24">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
-            {/* Columna principal: logo y descripción */}
-            <div className="md:col-span-2">
-              <Link href="/dashboard-home">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-FE1MGS6isFplG4BZ1WYezlE61Ypq3j.png"
-                  alt="PLANSAT Logo"
-                  width={120}
-                  height={32}
-                  className="object-contain mb-4 invert brightness-0"
-                />
-              </Link>
-              <p className="text-sm text-white/80 max-w-sm">
+      <footer className="bg-gradient-to-r from-[#6B46C1] to-[#8B5CF6] text-white py-12 mt-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Logo and Description */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-[#6B46C1] font-bold text-sm">P</span>
+                </div>
+                <span className="text-white text-xl font-bold">PLANSAT</span>
+              </div>
+              <p className="text-white/80 text-sm leading-relaxed">
                 Plataforma de análisis de vegetación afectada por incendios forestales en la Región de Ñuble, Chile.
               </p>
             </div>
 
-            {/* Columnas adicionales */}
+            {/* Platform Links */}
             <div>
-              <h3 className="font-medium mb-4 text-white">Navegación</h3>
+              <h3 className="font-semibold mb-4 text-white">Plataforma</h3>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-white/90 hover:text-white transition">
-                  <Map className="w-4 h-4" />
-                  <Link href="/dashboard-home">Dashboard</Link>
+                <li>
+                  <Link href="/dashboard-home" className="text-white/80 hover:text-white transition text-sm">
+                    Dashboard
+                  </Link>
                 </li>
               </ul>
             </div>
 
+            {/* Contact */}
             <div>
-              <h3 className="font-medium mb-4 text-white">Recursos</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2 text-sm text-white/80 hover:text-white transition">
-                  <FileText className="w-4 h-4" />
-                  <Link href="#">Documentación</Link>
-                </li>
-                <li className="flex items-center gap-2 text-sm text-white/80 hover:text-white transition">
-                  <Code className="w-4 h-4" />
-                  <Link href="#">API</Link>
-                </li>
-                <li className="flex items-center gap-2 text-sm text-white/80 hover:text-white transition">
-                  <HelpCircle className="w-4 h-4" />
-                  <Link href="#">Preguntas frecuentes</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-medium mb-4 text-white">Contacto</h3>
-              <ul className="space-y-2 text-white/80">
-                <li className="flex items-center gap-2 text-sm">
-                  <Mail className="w-4 h-4" />
-                  info@plansat.cl
-                </li>
-                <li className="flex items-center gap-2 text-sm">
-                  <Phone className="w-4 h-4" />
-                  +56 42 123 4567
-                </li>
-                <li className="flex items-center gap-2 text-sm">
-                  <MapPin className="w-4 h-4" />
-                  Valparaíso, V Región, Chile
-                </li>
+              <h3 className="font-semibold mb-4 text-white">Contacto</h3>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li>Email: info@plansat.cl</li>
+                <li>Teléfono: info@plansat.cl</li>
+                <li>Dirección: Valparaíso, V región, Chile</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-white/30 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-white/70">© 2025 PLANSAT. Todos los derechos reservados.</p>
+          <div className="border-t border-white/20 mt-8 pt-6 text-center">
+            <p className="text-white/70 text-sm">2025 PLANSAT. Todos los derechos reservados</p>
           </div>
         </div>
       </footer>
