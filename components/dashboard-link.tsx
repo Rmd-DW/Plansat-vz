@@ -20,7 +20,7 @@ export default function DashboardLink({
   children = "Acceder",
 }: DashboardLinkProps) {
   return (
-    <Link href="/loading">
+    <Link href="/dashboard-home">
       <Button variant={variant} size={size} className={className}>
         {children}
         <ArrowRight className="ml-2 h-4 w-4" />
