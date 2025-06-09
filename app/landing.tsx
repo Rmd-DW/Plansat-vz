@@ -7,9 +7,7 @@ import {
   ArrowRight,
   BarChart2,
   Map,
-  Shield,
   ChevronRight,
-  Flame,
   LineChart,
   Mail,
   Phone,
@@ -108,7 +106,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-bold">Visualización Geoespacial</h3>
                 <p className="text-muted-foreground">
-                  Mapas interactivos que muestran la distribución de incendios y áreas afectadas en la Región de Ñuble.
+                  Mapa interactivo que muestra la distribución de incendios y áreas afectadas en la región del Ñuble.
                 </p>
               </div>
             </CardContent>
@@ -120,9 +118,9 @@ export default function LandingPage() {
                 <div className="p-3 bg-primary/10 rounded-full">
                   <BarChart2 className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold">Análisis Estadístico</h3>
+                <h3 className="text-xl font-bold">Análisis estadísticos</h3>
                 <p className="text-muted-foreground">
-                  Gráficos y estadísticas detalladas sobre la evolución de incendios y tipos de vegetación afectada.
+                  Estudios de la distribución de incendios y áreas afectadas en la región del Ñuble.
                 </p>
               </div>
             </CardContent>
@@ -134,9 +132,9 @@ export default function LandingPage() {
                 <div className="p-3 bg-primary/10 rounded-full">
                   <FileText className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold">Generación de Reportes</h3>
+                <h3 className="text-xl font-bold">Generación de reportes</h3>
                 <p className="text-muted-foreground">
-                  Creación de informes personalizados en formato PDF con datos detallados para toma de decisiones.
+                  Datos para la generación de reportes para la toma de decisiones.
                 </p>
               </div>
             </CardContent>
@@ -146,11 +144,23 @@ export default function LandingPage() {
             <CardContent className="pt-6">
               <div className="flex flex-col items-center text-center space-y-4">
                 <div className="p-3 bg-primary/10 rounded-full">
-                  <Flame className="h-6 w-6 text-primary" />
+                  <BarChart2 className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold">Monitoreo de Impacto</h3>
+                <h3 className="text-xl font-bold">Monitoreo de frecuencia</h3>
+                <p className="text-muted-foreground">Seguimiento de frecuencia de incendios por comuna y período.</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
+            <CardContent className="pt-6">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-3 bg-primary/10 rounded-full">
+                  <LineChart className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Monitoreo de intensidad</h3>
                 <p className="text-muted-foreground">
-                  Seguimiento del impacto de incendios en diferentes tipos de vegetación y ecosistemas.
+                  Seguimiento de intensidad de los incendios por comuna y período.
                 </p>
               </div>
             </CardContent>
@@ -162,23 +172,10 @@ export default function LandingPage() {
                 <div className="p-3 bg-primary/10 rounded-full">
                   <LineChart className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold">Análisis Temporal</h3>
+                <h3 className="text-xl font-bold">Análisis temporal</h3>
                 <p className="text-muted-foreground">
-                  Comparación de datos históricos para identificar patrones y tendencias en incendios forestales.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-primary/20 hover:border-primary/50 transition-colors">
-            <CardContent className="pt-6">
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold">Soporte Técnico</h3>
-                <p className="text-muted-foreground">
-                  Asistencia especializada para usuarios y capacitación en el uso de la plataforma.
+                  Comparación de datos históricos para la identificación de patrones y tendencias de incendios
+                  forestales.
                 </p>
               </div>
             </CardContent>
