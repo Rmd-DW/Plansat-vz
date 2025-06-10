@@ -25,8 +25,19 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+      <header
+        className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative"
+        style={{
+          backgroundImage:
+            "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/header.jpg-mtpWQwuCVUmSfr6Zj6011ruybdeRWv.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Overlay para mejorar la legibilidad */}
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        <div className="container flex h-16 items-center justify-between relative z-10">
           <div className="flex items-center gap-2">
             <Link href="/dashboard-home">
               <Image
