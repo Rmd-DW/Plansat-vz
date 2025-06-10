@@ -20,7 +20,7 @@ import MapÑuble from "@/components/map-nuble"
 import { mockData } from "@/data/mock-data"
 import Image from "next/image"
 
-export default function DashboardHome() {
+export default function DashboardIntensidad() {
   const router = useRouter()
   const [selectedYear, setSelectedYear] = useState("Todos los registros")
   const [selectedCommune, setSelectedCommune] = useState("Todas las comunas")
@@ -82,17 +82,17 @@ export default function DashboardHome() {
         {/* Título y botones de vista */}
         <div className="bg-white rounded-2xl p-4 mb-6 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <h1 className="text-xl md:text-2xl font-bold text-[#6B46C1]">Mapa de frecuencia de incendios por comuna</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-[#6B46C1]">Mapa de Intensidad de incendios por comuna</h1>
             <div className="flex gap-3">
               <button
                 onClick={() => handleViewChange("frecuencia")}
-                className="px-6 py-2 rounded-xl font-medium transition-all duration-300 bg-[#6B46C1] text-white shadow-md"
+                className="px-6 py-2 rounded-xl font-medium transition-all duration-300 bg-white border border-[#6B46C1] text-[#6B46C1] hover:bg-[#6B46C1]/5"
               >
                 Vista Frecuencia
               </button>
               <button
                 onClick={() => handleViewChange("intensidad")}
-                className="px-6 py-2 rounded-xl font-medium transition-all duration-300 bg-white border border-[#6B46C1] text-[#6B46C1] hover:bg-[#6B46C1]/5"
+                className="px-6 py-2 rounded-xl font-medium transition-all duration-300 bg-[#6B46C1] text-white shadow-md"
               >
                 Vista Intensidad
               </button>
@@ -152,7 +152,7 @@ export default function DashboardHome() {
               <div className="w-8 h-8 bg-[#6B46C1]/10 rounded-lg flex items-center justify-center">
                 <FileText className="w-4 h-4 text-[#6B46C1]" />
               </div>
-              <h3 className="font-semibold text-gray-800">Resumen vista Frecuencia</h3>
+              <h3 className="font-semibold text-gray-800">Resumen vista Intensidad</h3>
             </div>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
@@ -193,7 +193,7 @@ export default function DashboardHome() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg md:text-xl font-bold text-[#6B46C1]">
-                Análisis detallado Frecuencia <span className="text-orange-500">(todas-las-comunas)</span> por{" "}
+                Análisis detallado Intensidad <span className="text-orange-500">(todas-las-comunas)</span> por{" "}
                 <span className="text-orange-500">(todas-los-años)</span>
               </h2>
             </div>
@@ -237,7 +237,7 @@ export default function DashboardHome() {
                           <div className="w-full h-full relative">
                             <Image
                               src="/placeholder.svg?height=350&width=800"
-                              alt="Mapa detallado de frecuencia de incendios"
+                              alt="Mapa detallado de intensidad de incendios"
                               fill
                               className="object-cover"
                             />
@@ -250,19 +250,19 @@ export default function DashboardHome() {
                           <div className="space-y-1 text-xs">
                             <div className="flex items-center gap-2">
                               <div className="w-3 h-3 bg-[#7F1D1D] rounded-sm"></div>
-                              <span className="text-gray-600">200+ incendios</span>
+                              <span className="text-gray-600">Intensidad 4 (Alta)</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <div className="w-3 h-3 bg-[#DC2626] rounded-sm"></div>
-                              <span className="text-gray-600">150 incendios</span>
+                              <span className="text-gray-600">Intensidad 3 (Media)</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <div className="w-3 h-3 bg-[#F97316] rounded-sm"></div>
-                              <span className="text-gray-600">100 incendios</span>
+                              <span className="text-gray-600">Intensidad 2 (Baja)</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <div className="w-3 h-3 bg-[#FBBF24] rounded-sm"></div>
-                              <span className="text-gray-600">50 incendios</span>
+                              <span className="text-gray-600">Intensidad 1 (Muy baja)</span>
                             </div>
                           </div>
                         </div>

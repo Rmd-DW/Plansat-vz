@@ -66,7 +66,7 @@ export default function LoadingScreen({ onLoadComplete, minDisplayTime = 3000 }:
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative mb-12"
       >
-        <Link href="/dashboard">
+        <Link href="/dashboard-home">
           <div className="text-white text-4xl font-bold tracking-wider cursor-pointer">PLANSAT</div>
         </Link>
       </motion.div>
