@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
+    "@radix-ui/react-command": "^0.2.0",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-slot": "^1.0.2",
     "chart.js": "latest",
     "chartjs-plugin-datalabels": "latest",
     "class-variance-authority": "^0.7.1",
@@ -19,6 +23,7 @@
     "jspdf": "latest",
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-chartjs-2": "latest",
     "react-dom": "^18",
